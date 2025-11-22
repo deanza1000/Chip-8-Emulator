@@ -10,8 +10,30 @@
  * 0x200-0xFFF - Program ROM and work RAM
  *
  */
-// TODO
-// opcodes left: 0xDXYN,0xEX9E,0xEXA1,0xFX0A,0xFX29,0xFX65
+
+/*TODO
+ * basic cases: (for opcodes argument composition)
+ *
+ * Starting in F or E: one argument being the 2nd nibble from the left (a
+ * register)
+ *
+ * Starting in 0: no arguments needed
+ *
+ * Starting in 1,2,A,B: one
+ * argument being the 3 other nibbles
+ *
+ * Starting in 8,9,5: two arguments being two
+ * middle nibbles (two registers)
+ *
+ * Starting in 3,4,6,7,C: two arguments: one is
+ * 2nd nibble (a register), the other one is 2 rightmost nibbles (an integer)
+ *
+ * Starting in D: three arguments: two middle nibbles are registers, the
+ * rightmost nibble is an integer
+ *
+ * divide the emulateCycle method into these cases and zero out the nessecary
+ * arguments (that's how the map knows which code it is)
+ * */
 
 // Initialize registers and memory once
 void Chip8::initialize() {

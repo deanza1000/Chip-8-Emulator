@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
   myChip8.loadGame(getRomPath().c_str());
   bool running = true;
   // to speed up ->increase. to slow dowsn ->decrease
-  const int CYCLES_PER_FRAME = 10;
+  const int CYCLES_PER_FRAME = 5;
   const int FRAME_DELAY_MS = 1000 / 60; // ~16 ms per frame
   Uint32 lastTimerUpdate = SDL_GetTicks();
   // Emulation loop
