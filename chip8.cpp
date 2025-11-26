@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdio>
 #include <cstdlib>
+#include <unordered_set>
 /*
  * 0x000-0x1FF - Chip 8 interpreter (contains font set in emu)
  * 0x050-0x0A0 - Used for the built in 4x5 pixel font set (0-F)
@@ -99,6 +100,30 @@ void Chip8::emulateCycle() {
   opcode = (memory[pc] << 8) | (memory[pc + 1]);
   int X = (opcode & 0x0F00) >> 8;
   int Y = (opcode & 0x00F0) >> 4;
+  std::vector<int> nibbles = {opcode & 0xF000, opcode & 0x0F00, opcode & 0x00F0,
+                              opcode & 0x000F};
+  int identifier = nibbles[0];
+  std::unordered_set<int> opsWithOneRegister;
+  opsWithOneRegister.insert(0xF000);
+  opsWithOneRegister.insert(0xE000);
+  std::unordered_set<int> opsWithOneInteger;
+  opsWithOneInteger.insert(0x1000);
+  opsWithOneInteger.insert(0x2000);
+  opsWithOneInteger.insert(0xA000);
+  opsWithOneInteger.insert(0xB000);
+  std::unordered_set<int> opsWithTwoRegisters;
+  opsWithTwoRegisters.insert(0x8000);
+  opsWithTwoRegisters.insert(0x9000);
+  std::unordered_set<int> opsWithRegisterAndInteger;
+  opsWithRegisterAndInteger.insert(0x3000);
+  opsWithRegisterAndInteger.insert(0x4000);
+  opsWithRegisterAndInteger.insert(0x6000);
+  opsWithRegisterAndInteger.insert(0x7000);
+  opsWithRegisterAndInteger.insert(0xC000);
+  std::unordered_set<int> opsWithTwoRegistersAndInteger;
+  opsWithTwoRegistersAndInteger.insert(0xD000);
+  std::unordered_set<int> opsWithNoArguments;
+  opsWithNoArguments.insert(0x0000);
   // decode opcode
   switch (opcode & 0xF000) {
   // opcode starts with 0xA...

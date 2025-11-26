@@ -112,4 +112,100 @@ Ops::Ops() {
   map[0xF065] = regLoad;
 }
 
+void Ops::setIToNNN(Chip8 &chip, std::vector<int> nibble) {}
+
+void Ops::subroutineReturn(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::disp_clear(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::gotoNNN(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::callSubroutineAtNNN(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::ifEqualToNN(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::ifNotEqualToNN(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::ifEqualToY(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::setXtoNN(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::addNNtoX(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setXtoY(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::setXtoXOrY(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::setXtoXAndY(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::setXtoXXorY(Chip8 &chip, std::vector<int> nibble) {
+
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::addYtoX(Chip8 &chip, std::vector<int> nibble) {
+
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::subtractYFromX(Chip8 &chip, std::vector<int> nibble) {
+
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::shiftXRight(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setXtoYMinusX(Chip8 &chip, std::vector<int> nibble) {
+
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::shiftXLeft(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::ifNotEqualToY(Chip8 &chip, std::vector<int> nibble) {
+
+  int X = (nibble[1]) >> 8;
+  int Y = (nibble[2]) >> 4;
+}
+void Ops::jumpTo0PlusNNN(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::setXtoRand(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::draw(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::ifKeyIsEqualToX(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::ifKeyIsNotEqualToX(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setXtoTimer(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setXtoKey(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setTimerToX(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setSoundToX(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::addXToI(Chip8 &chip, std::vector<int> nibble) {
+  int X = (nibble[1]) >> 8;
+}
+void Ops::setIToSprite(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::setToBCD(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::regDump(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::regLoad(Chip8 &chip, std::vector<int> nibble) {}
+
 Ops::~Ops() {}
