@@ -191,18 +191,10 @@ void Ops::ifKeyIsNotEqualToX(Chip8 &chip, std::vector<int> nibble) {
 void Ops::setXtoTimer(Chip8 &chip, std::vector<int> nibble) {
   int X = (nibble[1]) >> 8;
 }
-void Ops::setXtoKey(Chip8 &chip, std::vector<int> nibble) {
-  int X = (nibble[1]) >> 8;
-}
-void Ops::setTimerToX(Chip8 &chip, std::vector<int> nibble) {
-  int X = (nibble[1]) >> 8;
-}
-void Ops::setSoundToX(Chip8 &chip, std::vector<int> nibble) {
-  int X = (nibble[1]) >> 8;
-}
-void Ops::addXToI(Chip8 &chip, std::vector<int> nibble) {
-  int X = (nibble[1]) >> 8;
-}
+void Ops::setXtoKey(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::setTimerToX(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::setSoundToX(Chip8 &chip, std::vector<int> nibble) {}
+void Ops::addXToI(Chip8 &chip, std::vector<int> nibble) {}
 void Ops::setIToSprite(Chip8 &chip, std::vector<int> nibble) {}
 void Ops::setToBCD(Chip8 &chip, std::vector<int> nibble) {}
 void Ops::regDump(Chip8 &chip, std::vector<int> nibble) {}

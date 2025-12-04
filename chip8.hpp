@@ -40,7 +40,7 @@ public:
 private:
   std::pmr::unordered_map<int, opcodeFunc> map;
   // for 0x00E0
-  static void disp_clear(Chip8 &chip, std::vector<int> nibble);
+  void disp_clear(Chip8 &chip, std::vector<int> nibble);
 
   // for 0x00EE
   static void subroutineReturn(Chip8 &chip, std::vector<int> nibble);
